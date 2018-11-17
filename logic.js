@@ -36,14 +36,29 @@ function updateDropdowns(){
 // Update the current slider value (each time you drag the slider handle)
 slider1.oninput = function () {
     output1.innerHTML = this.value + "%";
+    var totalWeight = (parseInt(slider1.value) + parseInt(slider2.value) + parseInt(slider3.value));
+   
+    result.innerHTML = (
+        (parseInt(slider1.value) / totalWeight * parseInt(spent1.value)) + (parseInt(slider2.value) / totalWeight * parseInt(spent2.value)) + (parseInt(slider3.value) / totalWeight * parseInt(spent3.value))
+    ).toFixed(2)
 }
 
 slider2.oninput = function () {
     output2.innerHTML = this.value + "%";
+    var totalWeight = (parseInt(slider1.value) + parseInt(slider2.value) + parseInt(slider3.value));
+   
+    result.innerHTML = (
+        (parseInt(slider1.value) / totalWeight * parseInt(spent1.value)) + (parseInt(slider2.value) / totalWeight * parseInt(spent2.value)) + (parseInt(slider3.value) / totalWeight * parseInt(spent3.value))
+    ).toFixed(2)
 }
 
 slider3.oninput = function () {
     output3.innerHTML = this.value + "%";
+    var totalWeight = (parseInt(slider1.value) + parseInt(slider2.value) + parseInt(slider3.value));
+   
+    result.innerHTML = (
+        (parseInt(slider1.value) / totalWeight * parseInt(spent1.value)) + (parseInt(slider2.value) / totalWeight * parseInt(spent2.value)) + (parseInt(slider3.value) / totalWeight * parseInt(spent3.value))
+    ).toFixed(2)
 }
 
 var spent1 = document.getElementById("spent1");
@@ -63,16 +78,14 @@ spent3.oninput = function () {
     spentTotal.innerHTML = (parseInt(spent1.value) + parseInt(spent2.value) + parseInt(spent3.value));
 }
 
-function calculateResult(){
-    var totalWeight = (parseInt(slider1.value) + parseInt(slider2.value) + parseInt(slider3.value));
+// function calculateResult(){
+//     var totalWeight = (parseInt(slider1.value) + parseInt(slider2.value) + parseInt(slider3.value));
+   
+//     result.innerHTML = (
+//         (parseInt(slider1.value) / totalWeight * parseInt(spent1.value)) + (parseInt(slider2.value) / totalWeight * parseInt(spent2.value)) + (parseInt(slider3.value) / totalWeight * parseInt(spent3.value))
+//     ).toFixed(2)
 
-    console.log("totalWeight: " + totalWeight);
-    
-    result.innerHTML = (
-        (parseInt(slider1.value) / totalWeight * parseInt(spent1.value)) + (parseInt(slider2.value) / totalWeight * parseInt(spent2.value)) + (parseInt(slider3.value) / totalWeight * parseInt(spent3.value))
-    ).toFixed(2)
-
-}
+// }
 
 
 
