@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+        crossorigin="anonymous">
+    <link rel="stylesheet" href="./style.css">
+    <title>Sliders</title>
+</head>
+
+<body>
+    <div id="container">
+        <div class="jumbotron">
+            <h1 class="display-4">Mark's Simple Slider App</h1>
+            <p class="lead">This app lets you assign dollar values to 3 selections, then adjust the result based on individual weights.</p>
+            <hr class="my-4">
+            <div id="dropdowns">
+                <p class="lead">Make your selections</p>
+                <select id="dropdown1" name="dd1" onChange="updateDropdowns()">
+                    <option value="Andy">Andy</option>
+                    <option value="Bob">Bob</option>
+                    <option value="Chris">Chris</option>
+                    <option value="Dan">Dan</option>
+                    <option value="Eric">Eric</option>
+                </select>
+                $<input type="number" id="spent1" value=0>
+                <br><br>
+                <select id="dropdown2" name="dd2" onChange="updateDropdowns()">
+                    <option value="Andy">Andy</option>
+                    <option value="Bob">Bob</option>
+                    <option value="Chris">Chris</option>
+                    <option value="Dan">Dan</option>
+                    <option value="Eric">Eric</option>
+                </select>
+                $<input type="number" id="spent2" value=0>
+                <br><br>
+                <select id="dropdown3" name="dd3" onChange="updateDropdowns()">
+                    <option value="Andy">Andy</option>
+                    <option value="Bob">Bob</option>
+                    <option value="Chris">Chris</option>
+                    <option value="Dan">Dan</option>
+                    <option value="Eric">Eric</option>
+                </select>
+                $<input type="number" id="spent3" value=0>
+                <br>
+                <p>Your total is: <span id="spentTotal"></span></p>
+            </div><br>
+            <div id="sliders">
+                <p class="lead">How will you weigh your selections?</p>
+                <div class="slidecontainer1">
+                    <span class="lead" id="slider1name"></span>
+                    <input type="range" min="0" max="100" value="50" class="slider" id="slider1">
+                    <span id="slider1value"></span>
+                </div>
+                <div class="slidecontainer2">
+                    <span class="lead" id="slider2name"></span>
+                    <input type="range" min="0" max="100" value="50" class="slider" id="slider2">
+                    <span id="slider2value"></span>
+                </div>
+                <div class="slidecontainer3">
+                    <span class="lead" id="slider3name"></span>
+                    <input type="range" min="0" max="100" value="50" class="slider" id="slider3">
+                    <span id="slider3value"></span>
+                </div>
+            </div>
+            <div id="results">
+                <p>Here's the result: <span class="lead" id="result"></span></p>
+            </div>
+
+        </div>
+    </div>
+    <script src="logic.js"></script>
+</body>
+
+</html>
